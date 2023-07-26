@@ -57,9 +57,15 @@ public class UI {
 		printCapturedPieces(captured);
 		System.out.println();
 		System.out.print("Turn: "+chessMatch.getTurn());
-		System.out.println("Waiting player: "+chessMatch.getCurrentPlayer());
-		if(chessMatch.getCheck()) {
-			System.out.println("Check!");
+		if(!chessMatch.getCheckMate()) {
+			System.out.println("Waiting player: "+chessMatch.getCurrentPlayer());
+			if(chessMatch.getCheck()) {
+				System.out.println("Check!");
+			}
+		}else {
+			System.out.println("CheckMate!");
+			System.out.println("Winner: " + chessMatch.getCurrentPlayer());
+			
 		}
 	}
 
